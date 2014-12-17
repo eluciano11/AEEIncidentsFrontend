@@ -1,0 +1,31 @@
+{{outlet}}
+<div class="medium-12 columns breakdown">
+	{{#each data in controller}}
+		<h1>{{data.Pueblo}}</h1>
+		{{#each information in data.Averias}}
+			<div class="medium-4 columns">
+				<p>
+					hello
+				</p>
+				<p>
+					Area:
+					<span>
+						{{information.Area}}
+					</span>
+				</p>
+				<p>
+					Status:
+					<span>
+						{{information.Status}}
+					</span>
+				</p>
+				<p>
+					Last Update:
+					<span>
+						{{[information.Last Update]}}
+					</span>
+				</p>
+			</div>
+		{{/each}}
+	{{/each}}
+</div>

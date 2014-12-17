@@ -1,0 +1,12 @@
+<ul class="side-nav side-color">
+	{{#each data in controller}}
+		<li class="breakdown-list">
+			{{#link-to 'breakdowns.specific' data.Pueblo class="breakdown-list"}}
+				{{data.Pueblo}}
+				<span class="breakdown-count label right">
+					{{[data.Cantidad de averias]}}
+				</span>
+			{{/link-to}}
+		</li>
+	{{/each}}
+</ul>
