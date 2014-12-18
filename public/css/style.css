@@ -1,0 +1,51 @@
+/* Put your CSS here */
+ul, li, a{
+    color: white;
+}
+/*#002c50*/
+.aee-blue{
+    background-color: #002c50;
+}
+.aee-yellow{
+    background-color: #fab331;
+}
+.side-color{
+    background-color: #002c50;
+}
+.bottom-padding{
+    padding-bottom: 4%;
+}
+.no-padding-left > .columns{
+    padding-left: 0px;
+}
+.side-nav li a:not(.button){
+    font-weight: 500;
+    color: white;
+}
+.side-nav li a:not(.button):hover{
+    color: white;
+}
+#map svg{
+    left:-10%;
+}
+.breakdown{
+    background-color: #5B5B5B;
+}
+.breakdown:hover, .breakdown:active, .breakdown:focus{
+    background-color: #2b2b2b;
+    color: white;
+}
+#region-name{
+    font-family: 'helvetica';
+    color: #666;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+}
+.map-active{
+    fill: #fab331;
+}
+.test{
+    height: 100vh;
+}

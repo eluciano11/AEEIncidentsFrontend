@@ -1,1 +1,91 @@
-Hola,
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ember - First App</title>
+  <link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <script type="text/x-handlebars" id="application">
+        <div id="map-show">
+
+        </div>
+        {{outlet}}
+      </div>
+  </script>
+
+  <!-- Breakdowns -->
+  <script type="text/x-handlebars" id="breakdowns">
+    <div class="medium-3 columns side-color">
+        {{#link-to 'breakdowns.index'}}
+            <img src="img/aee-incidents.png" alt="" class="bottom-padding">
+        {{/link-to}}
+        <button name="button" onclick="generateMap()">Generate Map</button>
+        <div class="medium-12 columns">
+            <ul class="side-nav side-color" style="max-height: 530px; overflow-y: scroll;">
+                {{#each data in controller}}
+                    <li class="breakdown-list">
+                        <a {{action 'highlightMap' data.Pueblo}} class="breakdown-list">
+                            {{data.Pueblo}}
+                            <span class="aee-yellow label right">
+                                {{[data.Cantidad de averias]}}
+                            </span>
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="medium-9 columns">
+        <div id="show-map">
+            {{outlet}}
+        </div>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="breakdowns/specific">
+    {{outlet}}
+    <div class="medium-12 columns breakdown">
+    {{#each data in controller}}
+        <h1>{{data.Pueblo}}</h1>
+        {{#each information in data.Averias}}
+            <div class="medium-4 columns">
+                <p>
+                    Area:
+                    <span>
+                        {{information.Area}}
+                    </span>
+                </p>
+                <p>
+                    Status:
+                    <span>
+                        {{information.Status}}
+                    </span>
+                </p>
+                <p>
+                    Last Update:
+                    <span>
+                        {{[information.Last Update]}}
+                    </span>
+                </p>
+            </div>
+            {{/each}}
+        {{/each}}
+    </div>
+  </script>
+
+  <script src="http://cdn.foundation5.zurb.com/foundation.js"></script>
+  <script src="js/libs/jquery-1.10.2.js"></script>
+  <script src="js/libs/handlebars-1.1.2.js"></script>
+  <script src="js/libs/ember-1.7.0.js"></script>
+  <script src="js/libs/ember-data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/libs/map.js"></script>
+  <!-- to activate the test runner, add the "?test" query string parameter -->
+</body>
+</html>
