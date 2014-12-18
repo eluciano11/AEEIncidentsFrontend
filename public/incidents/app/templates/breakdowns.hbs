@@ -3,7 +3,7 @@
         <img src="aee-incidents.png" alt="" class="bottom-padding">
     {{/link-to}}
     <div class="medium-12 columns">
-        <ul class="side-nav side-color">
+        <ul class="side-nav side-color" style="max-height: 530px; overflow-y: scroll;">
             {{#each data in controller}}
                 <li class="breakdown-list">
                     <a {{action 'highlightMap' data.Pueblo}} class="breakdown-list">
