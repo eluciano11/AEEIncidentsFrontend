@@ -6,7 +6,7 @@ export default Ember.ArrayController.extend({
             var town = data.toLowerCase().split(' ');
 
             if(town.length < 1){
-                jQuer(('#map-' + town[0])).attr('class', 'map-active');
+                jQuery(('#map-' + town[0])).attr('class', 'map-active');
             }else{
                 var newTownId = '';
 
