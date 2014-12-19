@@ -12,7 +12,6 @@ App.BreakdownsRoute = Ember.Route.extend({
     model: function(){
         return Ember.$.getJSON('http://aeeapi.herokuapp.com/api/lista.json');
     }
-
 });
 
 App.BreakdownsSpecificRoute = Ember.Route.extend({
