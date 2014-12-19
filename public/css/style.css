@@ -1,22 +1,35 @@
 /* Put your CSS here */
-ul, li, a, p, h1, h2, h3, h4{
-    color: white;
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+body {
+    background-color: #757575;
+    font-family: 'Roboto',  sans-serif;
+    font-weight: 400;
 }
+
 /*#002c50*/
 .aee-blue{
-    background-color: #002c50;
+    background-color: #03A9F4;
 }
+/*Original: #fav331;*/
 .aee-yellow{
-    background-color: #fab331;
+    background-color: #FFEB3B;
 }
+
+.white {
+    background-color: white;
+    color: #03A9F4;
+}
+
 #display-map{
-    background-color: #fab331;
+    background-color: #fff;
+    color: #03A9F4;
 }
 #display-map:hover{
-    backdground-color: #FFA90D;
+    background-color: #ECEFF1;
 }
 .side-color{
-    background-color: #002c50;
+    background-color: #03A9F4;
 }
 .bottom-padding{
     padding-bottom: 4%;
@@ -29,7 +42,8 @@ ul, li, a, p, h1, h2, h3, h4{
     color: white;
 }
 .side-nav li a:not(.button):hover{
-    color: white;
+    color: #2196F3;
+    background-color: white;
 }
 #map svg{
     left:-10%;
@@ -40,7 +54,7 @@ ul, li, a, p, h1, h2, h3, h4{
 }
 .breakdown:hover, .breakdown:active, .breakdown:focus{
     background-color: #2b2b2b;
-    color: white;
+    color: #212121;
 }
 #region-name{
     font-family: 'helvetica';
@@ -51,7 +65,7 @@ ul, li, a, p, h1, h2, h3, h4{
     margin: 0 auto;
 }
 .map-active{
-    fill: #fab331;
+    fill: #FFEB3B;
 }
 .map-not-active{
     fill: #8aedbb;
@@ -61,6 +75,7 @@ ul, li, a, p, h1, h2, h3, h4{
     padding-bottom:0.5%;
     padding-left:0.5%;
     padding-right:0.5%;
+    height: 250px;
 }
 .breakdown-details h1{
     margin-top:1%;
@@ -69,11 +84,13 @@ ul, li, a, p, h1, h2, h3, h4{
 .breakdown-details p{
     font-weight:400;
     margin-bottom:1%;
+    color: #03A9F4;
 }
 .breakdown-detail-space{
     margin-top:1%;
     margin-bottom:1%;
     margin-right:1%;
-    background-color:#fab331;
-    width:32.3333%
+    border: solid 0.2em;
+    border-color: #757575;
+    width: 32.3333%;
 }

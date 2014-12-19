@@ -32,7 +32,7 @@
                     <li class="breakdown-list">
                         <a {{action 'highlightMap' data.Pueblo}} class="breakdown-list">
                             {{data.Pueblo}}
-                            <span class="aee-yellow label right">
+                            <span class="white label right">
                                 {{[data.Cantidad de averias]}}
                             </span>
                         </a>
@@ -42,17 +42,16 @@
         </div>
     </div>
     <div class="medium-9 columns breakdown-details">
-        <div id="show-map">
-            {{outlet}}
-        </div>
+        <div id="show-map"></div>
+        {{outlet}}
     </div>
   </script>
 
   <script type="text/x-handlebars" id="breakdowns/specific">
     {{outlet}}
-    <div class="medium-12 columns aee-blue">
+    <div class="medium-12 columns white">
         {{#each data in controller}}
-            <h1>{{data.Pueblo}}</h1>
+            <h1 style="color: #2196F3">{{data.Pueblo}}</h1>
             {{#each information in data.Averias}}
                 <div class="medium-4 columns breakdown-detail-space">
                     <p>
