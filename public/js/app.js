@@ -23,13 +23,21 @@ App.BreakdownsSpecificRoute = Ember.Route.extend({
 
 //Controllers
 App.BreakdownsController = Ember.ArrayController.extend({
+    lastTown : '',
     actions:{
         highlightMap: function(data){
+            var previouslyActiveTown = this.get('lastTown');
+
+            if(previouslyActiveTown){
+                $(previouslyActiveTown).attr('class', 'map-not-active');
+            }
+
             var town = data.toLowerCase().split(' ');
             var elementId = '';
             if(town.length < 1){
                 elementId = "#map-" + town[0];
                 jQuery(elementId).attr('class', 'map-active');
+                this.set('lastTown', elementId);
             }else{
                 var newTownId = '';
 
@@ -41,9 +49,8 @@ App.BreakdownsController = Ember.ArrayController.extend({
 
                 elementId = '#map-' + newTownId;
                 jQuery(elementId).attr('class', 'map-active');
+                this.set('lastTown', elementId);
             }
-
-
 
             this.transitionToRoute('breakdowns.specific', data.toLowerCase());
         }

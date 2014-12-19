@@ -53,6 +53,9 @@ ul, li, a, p, h1, h2, h3, h4{
 .map-active{
     fill: #fab331;
 }
+.map-not-active{
+    fill: #8aedbb;
+}
 .breakdown-details{
     padding-top:0.5%;
     padding-bottom:0.5%;
