@@ -9,7 +9,7 @@ body {
 
 /*#002c50*/
 .aee-blue{
-    background-color: #03A9F4;
+    background-color: #00BCD4;
 }
 /*Original: #fav331;*/
 .aee-yellow{
@@ -18,18 +18,22 @@ body {
 
 .white {
     background-color: white;
-    color: #03A9F4;
+    color: #00BCD4;
+}
+
+.gray {
+    background-color: #4CAF50;
 }
 
 #display-map{
     background-color: #fff;
-    color: #03A9F4;
+    color: #00BCD4;
 }
 #display-map:hover{
     background-color: #ECEFF1;
 }
 .side-color{
-    background-color: #03A9F4;
+    background-color: #00BCD4;
 }
 .bottom-padding{
     padding-bottom: 4%;
@@ -42,7 +46,7 @@ body {
     color: white;
 }
 .side-nav li a:not(.button):hover{
-    color: #2196F3;
+    color: #00BCD4;
     background-color: white;
 }
 #map svg{
@@ -57,7 +61,6 @@ body {
     color: #212121;
 }
 #region-name{
-    font-family: 'helvetica';
     color: #666;
     width: 250px;
     height: 50px;
@@ -84,13 +87,11 @@ body {
 .breakdown-details p{
     font-weight:400;
     margin-bottom:1%;
-    color: #03A9F4;
+    color: #fff;
 }
 .breakdown-detail-space{
     margin-top:1%;
     margin-bottom:1%;
     margin-right:1%;
-    border: solid 0.2em;
-    border-color: #757575;
     width: 32.3333%;
 }

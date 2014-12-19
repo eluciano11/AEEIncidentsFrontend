@@ -12,11 +12,7 @@
 <body>
 
   <script type="text/x-handlebars" id="application">
-        <div id="map-show">
-
-        </div>
         {{outlet}}
-      </div>
   </script>
 
   <!-- Breakdowns -->
@@ -49,9 +45,9 @@
 
   <script type="text/x-handlebars" id="breakdowns/specific">
     {{outlet}}
-    <div class="medium-12 columns white">
+    <div class="medium-12 columns gray">
         {{#each data in controller}}
-            <h1 style="color: #2196F3">{{data.Pueblo}}</h1>
+            <h1 style="color: #fff;">{{data.Pueblo}}</h1>
             {{#each information in data.Averias}}
                 <div class="medium-4 columns breakdown-detail-space">
                     <p>
