@@ -23,6 +23,7 @@ App.BreakdownsSpecificRoute = Ember.Route.extend({
 //Controllers
 App.BreakdownsController = Ember.ArrayController.extend({
     lastTown : '',
+    disableButton: false,
     actions:{
         highlightMap: function(data){
             var previouslyActiveTown = this.get('lastTown');
@@ -52,6 +53,10 @@ App.BreakdownsController = Ember.ArrayController.extend({
             }
 
             this.transitionToRoute('breakdowns.specific', data.toLowerCase());
+        },
+
+      disableMap: function(){
+          this.set('disableButton', 'true');
         }
     }
 });
