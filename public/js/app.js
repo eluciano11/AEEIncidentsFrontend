@@ -26,9 +26,10 @@ App.BreakdownsController = Ember.ArrayController.extend({
     actions:{
         highlightMap: function(data){
             var town = data.toLowerCase().split(' ');
-
+            var elementId = '';
             if(town.length < 1){
-                jQuery(('#map-' + town[0])).attr('class', 'map-active');
+                elementId = "#map-" + town[0];
+                jQuery(elementId).attr('class', 'map-active');
             }else{
                 var newTownId = '';
 
@@ -38,8 +39,11 @@ App.BreakdownsController = Ember.ArrayController.extend({
                 if(newTownId.charAt((newTownId.length - 1)) === '_')
                     newTownId = newTownId.substring(0, (newTownId.length - 1));
 
-                jQuery(('#map-' + newTownId)).attr('class', 'map-active');
+                elementId = '#map-' + newTownId;
+                jQuery(elementId).attr('class', 'map-active');
             }
+
+
 
             this.transitionToRoute('breakdowns.specific', data.toLowerCase());
         }

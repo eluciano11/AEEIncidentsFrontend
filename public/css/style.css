@@ -1,5 +1,5 @@
 /* Put your CSS here */
-ul, li, a{
+ul, li, a, p, h1, h2, h3, h4{
     color: white;
 }
 /*#002c50*/
@@ -8,6 +8,12 @@ ul, li, a{
 }
 .aee-yellow{
     background-color: #fab331;
+}
+#display-map{
+    background-color: #fab331;
+}
+#display-map:hover{
+    backdground-color: #FFA90D;
 }
 .side-color{
     background-color: #002c50;
@@ -27,6 +33,7 @@ ul, li, a{
 }
 #map svg{
     left:-10%;
+    margin-top:-10%;
 }
 .breakdown{
     background-color: #5B5B5B;
@@ -46,6 +53,24 @@ ul, li, a{
 .map-active{
     fill: #fab331;
 }
-.test{
-    height: 100vh;
+.breakdown-details{
+    padding-top:0.5%;
+    padding-bottom:0.5%;
+    padding-left:0.5%;
+    padding-right:0.5%;
+}
+.breakdown-details h1{
+    margin-top:1%;
+    margin-bottom:1%;
+}
+.breakdown-details p{
+    font-weight:400;
+    margin-bottom:1%;
+}
+.breakdown-detail-space{
+    margin-top:1%;
+    margin-bottom:1%;
+    margin-right:1%;
+    background-color:#fab331;
+    width:32.3333%
 }

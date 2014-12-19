@@ -1,6 +1,5 @@
 function generateMap(){
     var element = document.getElementById("show-map");
-    alert(element);
     var newElement = document.createElement("div");
     newElement.setAttribute('id', 'map');
 
