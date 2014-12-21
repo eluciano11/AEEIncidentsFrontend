@@ -22,7 +22,7 @@ body {
 }
 
 .breakdows-information {
-    background-color: #4CAF50;
+    background-color: #808080;
 }
 
 .breakdowns-information-up{
@@ -98,5 +98,5 @@ body {
     margin-bottom:1%;
     margin-right:1%;
     width: 32.3333%;
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: rgba(0, 0, 0, 0.08);
 }
