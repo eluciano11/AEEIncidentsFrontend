@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <title>AEE - Incidents</title>
-  <link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8">
+    <title>AEE - Incidents</title>
+    <link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-  <script type="text/x-handlebars" id="application">
+    <script type="text/x-handlebars" id="application">
         {{outlet}}
-  </script>
+    </script>
 
-  <!-- Breakdowns -->
-  <script type="text/x-handlebars" id="breakdowns">
-    <div class="medium-3 columns side-color">
-        {{#link-to 'breakdowns.index'}}
-            <img src="img/aee.png" alt="" class="bottom-padding">
-        {{/link-to}}
-        <div class="medium-12 columns">
-            <button {{action 'disableMap'}} {{bind-attr disabled=disableButton}} class="button expand" id="display-map" name="button" onclick="generateMap()">Generate Map</button>
-            <ul class="side-nav side-color" style="max-height: 530px; overflow-y: scroll;">
-                {{#each data in controller}}
+    <!-- Breakdowns -->
+    <script type="text/x-handlebars" id="breakdowns">
+        <div class="medium-3 columns side-color">
+            {{#link-to 'breakdowns.index'}}
+            <img src="img/aee.png" alt="" class="bottom-padding"> {{/link-to}}
+            <div class="medium-12 columns">
+                <button {{action 'disableMap'}} {{bind-attr disabled=disableButton}} class="button expand" id="display-map" name="button" onclick="generateMap()">Generate Map</button>
+                <ul class="side-nav side-color" style="max-height: 530px; overflow-y: scroll;">
+                    {{#each data in controller}}
                     <li class="breakdown-list">
                         <a {{action 'highlightMap' data.Pueblo}} class="breakdown-list">
                             {{data.Pueblo}}
@@ -33,51 +34,41 @@
                             </span>
                         </a>
                     </li>
-                {{/each}}
-            </ul>
+                    {{/each}}
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="medium-9 columns breakdown-details">
-        <div id="show-map"></div>
+        <div class="medium-9 columns breakdown-details">
+            <div id="show-map"></div>
+            {{outlet}}
+        </div>
+    </script>
+
+    <script type="text/x-handlebars" id="breakdowns/specific">
         {{outlet}}
-    </div>
-  </script>
-
-  <script type="text/x-handlebars" id="breakdowns/specific">
-    {{outlet}}
-    <div class="medium-12 columns breakdows-information" id="information">
-        {{#each data in controller}}
-            <h1 style="color: #fff;">{{data.Pueblo}}</h1>
-            {{#each information in data.Averias}}
-                <div class="medium-4 columns breakdown-detail-space">
-                    <p>
-                        Area:
-                        <span>
-                            {{information.Area}}
-                        </span>
-                    </p>
-                    <p>
-                        Status:
-                        <span>
-                            {{information.Status}}
-                        </span>
-                    </p>
-                    <p>
-                        Last Update:
-                        <span>
-                            {{[information.Last Update]}}
-                        </span>
-                    </p>
-                </div>
+        <div class="medium-12 columns breakdows-information" id="information">
+            {{#each data in controller}}
+            <h1 style="color: #fff;">{{data.Pueblo}}</h1> 
+            <ul>
+                {{#each information in data.Averias}}
+                    <li class="medium-4 columns breakdown-detail-space">
+                        Area: {{information.Area}}
+                        <br/>
+                        Status:{{information.Status}}
+                        <br/>
+                        Last Update:{{[information.Last Update]}}
+                    </li>
+                {{/each}} 
+            </ul>
             {{/each}}
-        {{/each}}
-    </div>
-  </script>
+        </div>
+    </script>
 
-  <script src="http://cdn.foundation5.zurb.com/foundation.js"></script>
-  <script src="js/libs/handlebars-1.1.2.js"></script>
-  <script src="js/libs/ember-1.7.0.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/libs/map.js"></script>
+    <script src="http://cdn.foundation5.zurb.com/foundation.js"></script>
+    <script src="js/libs/handlebars-1.1.2.js"></script>
+    <script src="js/libs/ember-1.7.0.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/libs/map.js"></script>
 </body>
+
 </html>
