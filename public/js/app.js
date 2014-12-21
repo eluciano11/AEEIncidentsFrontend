@@ -26,6 +26,7 @@ App.BreakdownsController = Ember.ArrayController.extend({
     disableButton: false,
     actions:{
         highlightMap: function(data){
+            //If there is a previos town selected change it's color.
             var previouslyActiveTown = this.get('lastTown');
 
             if(previouslyActiveTown){
@@ -34,11 +35,11 @@ App.BreakdownsController = Ember.ArrayController.extend({
 
             var town = data.toLowerCase().split(' ');
             var elementId = '';
-            if(town.length < 1){
+            if(town.length < 1 && this.get('disableButton')){
                 elementId = "#map-" + town[0];
                 jQuery(elementId).attr('class', 'map-active');
                 this.set('lastTown', elementId);
-            }else{
+            }else if(this.get('disableButton')){
                 var newTownId = '';
 
                 for(var i = 0; i < town.length; i++)
@@ -57,6 +58,8 @@ App.BreakdownsController = Ember.ArrayController.extend({
 
       disableMap: function(){
           this.set('disableButton', 'true');
+          jQuery('#information').attr('class', (jQuery('#information').attr('class') + ' breakdowns-information-up'))
+
         }
     }
 });

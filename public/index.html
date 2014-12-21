@@ -45,7 +45,7 @@
 
   <script type="text/x-handlebars" id="breakdowns/specific">
     {{outlet}}
-    <div class="medium-12 columns gray">
+    <div class="medium-12 columns breakdows-information" id="information">
         {{#each data in controller}}
             <h1 style="color: #fff;">{{data.Pueblo}}</h1>
             {{#each information in data.Averias}}
