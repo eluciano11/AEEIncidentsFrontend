@@ -27,11 +27,11 @@ ul{
 }
 
 .breakdows-information {
+    white-space: none;
+    overflow-y:scroll;
+    height: 67%;
+    margin-top: -4%;
     background-color: #808080;
-}
-
-.breakdowns-information-up{
-    margin-top: -5%;
 }
 
 #display-map{
@@ -49,6 +49,9 @@ ul{
 }
 .no-padding-left > .columns{
     padding-left: 0px;
+}
+.side-nav{
+    height: 100vh;
 }
 .side-nav li a:not(.button){
     font-weight: 500;
