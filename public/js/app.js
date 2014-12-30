@@ -41,11 +41,11 @@ App.BreakdownsController = Ember.ArrayController.extend({
 
             var town = data.toLowerCase().split(' ');
             var elementId = '';
-            if(town.length < 1 && this.get('disableButton')){
+            if(town.length < 1){
                 elementId = "#map-" + town[0];
                 jQuery(elementId).attr('class', 'map-active');
                 this.set('lastTown', elementId);
-            }else if(this.get('disableButton')){
+            }else{
                 var newTownId = '';
 
                 for(var i = 0; i < town.length; i++)
