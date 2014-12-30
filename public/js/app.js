@@ -20,10 +20,16 @@ App.BreakdownsSpecificRoute = Ember.Route.extend({
     }
 });
 
+//Views
+App.BreakdownsView = Ember.View.extend({
+    didInsertElement: function(){
+        generateMap();
+    }
+});
+
 //Controllers
 App.BreakdownsController = Ember.ArrayController.extend({
     lastTown : '',
-    disableButton: false,
     actions:{
         highlightMap: function(data){
             //If there is a previos town selected change it's color.
@@ -54,12 +60,6 @@ App.BreakdownsController = Ember.ArrayController.extend({
             }
 
             this.transitionToRoute('breakdowns.specific', data.toLowerCase());
-        },
-
-      disableMap: function(){
-          this.set('disableButton', 'true');
-          jQuery('#information').attr('class', (jQuery('#information').attr('class') + ' breakdowns-information-up'))
-
         }
     }
 });
