@@ -51,7 +51,7 @@ ul{
     padding-left: 0px;
 }
 .side-nav{
-    height: 100vh;
+    height: 100px;
 }
 .side-nav li a:not(.button){
     font-weight: 500;
