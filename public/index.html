@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>AEE - Incidents</title>
     <link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
@@ -15,6 +16,50 @@
 
     <script type="text/x-handlebars" id="application">
         {{outlet}}
+    </script>
+
+    <!-- Index -->
+    <script type="text/x-handlebars" id="index">
+        <div class="home">
+            <div class="medium-12 columns">
+                <div class="medium-offset-4 medium-4 columns">
+                    <img src="img/aee-down.png" alt="">
+                </div>
+            </div>
+            <div class="medium-12 columns">
+                <div class="medium-12 columns">
+                    <div class="medium-offset-4 medium-4 columns text-center">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed eros mi. Aliquam id nibh vel nisi dictum condimentum faucibus a orci. Vivamus consequat nibh at sagittis volutpat. Etiam justo urna, tempor eget purus a, bibendum convallis neque. 
+                        </p>
+                    </div>
+                </div>
+                <div class="medium-12 columns">
+                    <div class="medium-offset-4 medium-4 columns">
+                        {{#link-to 'breakdowns'}}
+                            <button class="button expand home-button">See Incidents</button>
+                        {{/link-to}}
+                    </div>
+                </div>
+            </div>
+            <div class="medium-12 columns">
+                <footer>
+                    <div class="text-right footer-information">
+                        <p>
+                            <a href="https://github.com/ens-labs">
+                                <img class="img-circle img-small" src="http://www.gravatar.com/avatar/53cee157c466bd37b8c75173611cadba.jpg?s=145"> 
+                            </a>
+                            <a href="https://github.com/eluciano11">
+                                <img class="img-circle img-small" src="https://www.gravatar.com/avatar/472f9c9bd76dc1a47ad8b38a0b3b49c0?d=identicon&s=145"> 
+                            </a>
+                            <a href="https://github.com/Code4PuertoRico">
+                                <img class="img-small" src="img/code4pr.svg">
+                            </a>
+                        </p>
+                    </div>
+                </footer>
+            </div>
+        </div>
     </script>
 
     <!-- Breakdowns -->

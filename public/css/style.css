@@ -21,11 +21,14 @@ ul{
     background-color: #FFEB3B;
 }
 
-.white {
+.home-button, .white {
     background-color: white;
     color: #00BCD4;
 }
-
+.home-button:hover{
+    background-color:rgba(255, 255, 255, 0.86); 
+    color: #00BCD4;
+}
 .breakdows-information {
     white-space: none;
     overflow-y:scroll;
@@ -107,4 +110,25 @@ ul{
     margin-right:1%;
     width: 32.3333%;
     color:white;
+}
+.home{
+    height: 100vh;
+    width: 100vw;
+    background-color: #00BCD4;
+}
+.home h1, h2, h3, h4, a, p{
+    color:white;
+}
+.home-information{
+    margin-top: 7%;
+}
+.img-small{
+    height: 50px;
+}
+.footer-information{
+    text-align: right;
+    display: inline;
+}
+.img-circle{
+    border-radius: 50%;
 }
