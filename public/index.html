@@ -30,7 +30,7 @@
                 <div class="medium-12 columns">
                     <div class="medium-offset-4 medium-4 columns text-center">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed eros mi. Aliquam id nibh vel nisi dictum condimentum faucibus a orci. Vivamus consequat nibh at sagittis volutpat. Etiam justo urna, tempor eget purus a, bibendum convallis neque. 
+                            This "version" of AEE Incidents started with the idea of letting the people of Puerto Rico know about the averias in Puerto Rico and doing it in a pretty/user friendly way. Hope you enjoy!
                         </p>
                     </div>
                 </div>
@@ -64,11 +64,12 @@
 
     <!-- Breakdowns -->
     <script type="text/x-handlebars" id="breakdowns">
-        <div class="medium-3 columns side-color">
+        <div id="dynamic-resize" class="medium-3 columns side-color">
             {{#link-to 'breakdowns.index'}}
-            <img src="img/aee.png" alt="" class="bottom-padding"> {{/link-to}}
+                <img src="img/aee.png" alt="" class="bottom-padding"> 
+            {{/link-to}}
             <div class="medium-12 columns">
-                <ul class="side-nav side-color" style="max-height: 530px; overflow-y: scroll;">
+                <ul id="dynamic-ul" class="side-nav side-color" style="overflow-y: scroll;">
                     {{#each data in controller}}
                     <li class="breakdown-list">
                         <a {{action 'highlightMap' data.Pueblo}} class="breakdown-list">
@@ -90,7 +91,7 @@
 
     <script type="text/x-handlebars" id="breakdowns/specific">
         {{outlet}}
-        <div class="medium-12 columns breakdows-information" id="information">
+        <div id="information" class="medium-12 columns breakdows-information">
             {{#each data in controller}}
             <h1 style="color: #fff;">{{data.Pueblo}}</h1> 
             <ul>
@@ -113,6 +114,8 @@
     <script src="js/libs/ember-1.7.0.js"></script>
     <script src="js/app.js"></script>
     <script src="js/libs/map.js"></script>
+    <!-- This is for when the page is resizing-->
+    <script src="js/libs/dynamic-list.js"></script>
 </body>
 
 </html>

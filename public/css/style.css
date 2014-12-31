@@ -53,9 +53,7 @@ ul{
 .no-padding-left > .columns{
     padding-left: 0px;
 }
-.side-nav{
-    height: 100vh;
-}
+
 .side-nav li a:not(.button){
     font-weight: 500;
     color: white;

@@ -23,6 +23,11 @@ App.BreakdownsSpecificRoute = Ember.Route.extend({
 //Views
 App.BreakdownsView = Ember.View.extend({
     didInsertElement: function(){
+        //This is for when the page loads
+        var window_size = $(window).height();
+        var ul_size = window_size - 129;
+        document.getElementById('dynamic-resize').style.height = window_size + 'px';
+        document.getElementById('dynamic-ul').style.height = ul_size + 'px';
         generateMap();
     }
 });
