@@ -20,7 +20,7 @@
 
     <!-- Index -->
     <script type="text/x-handlebars" id="index">
-        <div class="home">
+        <div id="home" class="home">
             <div class="medium-12 columns">
                 <div class="medium-offset-4 medium-4 columns">
                     <img src="img/aee-down.png" alt="">
@@ -116,6 +116,13 @@
     <script src="js/libs/map.js"></script>
     <!-- This is for when the page is resizing-->
     <script src="js/libs/dynamic-list.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            ele = document.getElementById('home');
+            var heighty = $(window).height();;
+            ele.style.height = heighty + 'px';
+        });
+    </script>
 </body>
 
 </html>

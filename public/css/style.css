@@ -109,9 +109,8 @@ ul{
     width: 32.3333%;
     color:white;
 }
-.home{
-    height: 100vh;
-    width: 100vw;
+.home {
+    width: 100%;
     background-color: #00BCD4;
 }
 .home h1, h2, h3, h4, a, p{
