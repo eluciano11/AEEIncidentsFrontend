@@ -129,3 +129,10 @@ ul{
 .img-circle{
     border-radius: 50%;
 }
+.loading{
+    content: url('http://bradsknutson.com/wp-content/uploads/2013/04/page-loader.gif');
+    width:5%;
+    height:10%;
+    margin: 20% auto 25% auto;
+    z-index: 100;
+}
