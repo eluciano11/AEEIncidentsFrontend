@@ -5,18 +5,13 @@ App.Router.map(function() {
     this.resource('breakdowns', function(){
         this.route('specific', {path: 'specific/:town_name'});
     });
+    this.route('loading');
 });
 
 //Routes
 App.BreakdownsRoute = Ember.Route.extend({
-    beforeModel: function(){
-        Ember.$('body').addClass('loading');
-    },
     model: function(){
         return Ember.$.getJSON('http://aeeapi.herokuapp.com/api/lista.json');
-    },
-    afterModel: function(){
-        Ember.$('body').removeClass('loading');
     }
 });
 
