@@ -30,16 +30,9 @@ App.BreakdownsSpecificRoute = Ember.Route.extend({
 App.BreakdownsView = Ember.View.extend({
     didInsertElement: function(){
         //This is for when the page loads
+        var window_size = $(window).height();
+        document.getElementById('dynamic-resize').style.height = window_size + 'px';
         generateMap();
-        setTimeout(function(){
-            var window_size = $(window).height();
-            var imagen_size = document.getElementById('imagen').height;
-            console.log('Image size: ' + imagen_size);
-            var ul_size = window_size - imagen_size;
-            console.log('UL size: ' + ul_size);
-            document.getElementById('dynamic-resize').style.height = window_size + 'px';
-            document.getElementById('dynamic-ul').style.height = ul_size + 'px';
-        }, 100);
     }
 });
 

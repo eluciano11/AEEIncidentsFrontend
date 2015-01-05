@@ -69,8 +69,8 @@
                 <img id="imagen" src="img/aee.png" alt=""> 
                 </br>
             {{/link-to}}
-            <div class="medium-12 columns">
-                <ul id="dynamic-ul" class="side-nav side-color" style="overflow-y: scroll;">
+            <div class="medium-12 columns" style="overflow: hidden; height: 80%;">
+                <ul class="side-nav side-color" style="overflow-y: scroll; height: 100%;">
                     {{#each data in controller}}
                     <li class="breakdown-list">
                         <a {{action 'highlightMap' data.Pueblo}} class="breakdown-list">
