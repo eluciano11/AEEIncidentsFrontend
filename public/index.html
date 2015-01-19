@@ -69,7 +69,7 @@
     <!-- Breakdowns -->
     <script type="text/x-handlebars" id="breakdowns">
         <div id="dynamic-resize" class="medium-3 columns side-color">
-            {{#link-to 'breakdowns.index'}}
+            {{#link-to 'breakdowns.view'}}
                 <img id="imagen" src="img/aee.png" alt=""> 
                 </br>
             {{/link-to}}
@@ -95,6 +95,10 @@
         <div class="medium-9 columns breakdown-details">
             {{outlet}}
         </div>
+    </script>
+
+    <script type="text/x-handlebars" id="breakdowns/loading">
+        <div class="loading"></div>
     </script>
 
     <script type="text/x-handlebars" id="breakdowns/report">
@@ -124,11 +128,16 @@
         {{outlet}}
     </script>
 
+    <script type="text/x-handlebars" id="breakdowns/view/loading">
+        <div class="loading"></div>
+    </script>
+
     <script type="text/x-handlebars" id="breakdowns/view/specific">
         {{outlet}}
         <div id="information" class="medium-12 columns breakdows-information">
             {{#each data in controller}}
-            <h1 style="color: #fff;">{{data.Pueblo}}</h1> 
+            <h1 style="color: #fff;">{{data.Pueblo}}</h1>
+            <hr/>
             <ul>
                 {{#each information in data.Averias}}
                     <li class="medium-4 columns breakdown-detail-space">
