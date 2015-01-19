@@ -109,14 +109,10 @@
                             </a>
                         ).
                     </p>
-                    <form>
-                        <label for="town">Town</label>
-                        {{input type="text" id="town" valueBinding="town"}}
-                        <label for="area">Area</label>
-                        {{input type="text" id="area" valueBinding="area"}}
-                        <button class="button expand submit-button" {{action 'submit'}}>
-                            Submit Report
-                        </button>
+                    <form action="/queja" method="post" role="form">
+                        <input type="text" name="town" placeholder="Town"/>
+                        <input type="text" name="area" placeholder="Area"/>
+                        <button type="submit" class="button expand submit-button">Submit Report</button>
                     </form>
                 </div>
             </div>

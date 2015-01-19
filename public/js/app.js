@@ -70,21 +70,3 @@ App.BreakdownsController = Ember.ArrayController.extend({
         }
     }
 });
-
-App.BreakdownsReportController = Ember.Controller.extend({
-    town: '',
-    area: '',
-    success: false,
-    fail: false,
-    actions: {
-        submit: function(){
-            if (this.get('area') && this.get('town')){
-                $.ajax({
-                    url: 'http://aeeincidents.herokuapp.com/queja',
-                    type: 'POST',
-                    data: '?area=' + this.get('area').trim() + '&town=' + this.get('town').trim()
-                });
-            };
-        }
-    }
-});
