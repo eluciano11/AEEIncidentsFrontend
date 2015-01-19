@@ -7,5 +7,5 @@ function resize_list() {
 var resizeTimer;
 $(window).resize(function() {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(resize_list, 50);
+    resizeTimer = setTimeout(resize_list(), 50);
 });

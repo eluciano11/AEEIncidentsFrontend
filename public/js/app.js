@@ -3,7 +3,10 @@ App = Ember.Application.create();
 //Router
 App.Router.map(function() {
     this.resource('breakdowns', function(){
-        this.route('specific', {path: 'specific/:town_name'});
+        this.resource('breakdowns.view', { path:'/view' }, function(){
+            this.route('specific', { path: 'specific/:town_name' });
+        });
+        this.route('report');
     });
     this.route('loading');
 });
@@ -15,14 +18,14 @@ App.BreakdownsRoute = Ember.Route.extend({
     }
 });
 
-App.BreakdownsSpecificRoute = Ember.Route.extend({
+App.BreakdownsViewSpecificRoute = Ember.Route.extend({
     model: function(params){
         return Ember.$.getJSON('http://aeeapi.herokuapp.com/api/pueblo_especifico.json?pueblo=' + params.town_name);
     }
 });
 
 //Views
-App.BreakdownsView = Ember.View.extend({
+App.BreakdownsViewView = Ember.View.extend({
     didInsertElement: function(){
         //This is for when the page loads
         var window_size = $(window).height();
@@ -33,7 +36,7 @@ App.BreakdownsView = Ember.View.extend({
 
 //Controllers
 App.BreakdownsController = Ember.ArrayController.extend({
-    lastTown : '',
+        lastTown : '',
     actions:{
         highlightMap: function(data){
             //If there is a previos town selected change it's color.
@@ -63,7 +66,25 @@ App.BreakdownsController = Ember.ArrayController.extend({
                 this.set('lastTown', elementId);
             }
 
-            this.transitionToRoute('breakdowns.specific', data.toLowerCase());
+            this.transitionToRoute('breakdowns.view.specific', data.toLowerCase());
+        }
+    }
+});
+
+App.BreakdownsReportController = Ember.Controller.extend({
+    town: '',
+    area: '',
+    success: false,
+    fail: false,
+    actions: {
+        submit: function(){
+            if (this.get('area') && this.get('town')){
+                $.ajax({
+                    url: 'http://aeeincidents.herokuapp.com/queja',
+                    type: 'POST',
+                    data: '?area=' + this.get('area').trim() + '&town=' + this.get('town').trim()
+                });
+            };
         }
     }
 });

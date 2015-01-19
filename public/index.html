@@ -40,7 +40,7 @@
                 </div>
                 <div class="medium-12 columns">
                     <div class="medium-offset-4 medium-4 columns">
-                        {{#link-to 'breakdowns'}}
+                        {{#link-to 'breakdowns.view'}}
                             <button class="button expand home-button">See Incidents</button>
                         {{/link-to}}
                     </div>
@@ -75,6 +75,10 @@
             {{/link-to}}
             <div class="medium-12 columns" style="overflow: hidden; height: 80%;">
                 <ul class="side-nav side-color" style="overflow-y: scroll; height: 100%;">
+                    {{#link-to 'breakdowns.report' class="button expand home-button"}}
+                        Report Breakdown
+                    {{/link-to}}
+
                     {{#each data in controller}}
                     <li class="breakdown-list">
                         <a {{action 'highlightMap' data.Pueblo}} class="breakdown-list">
@@ -89,12 +93,42 @@
             </div>
         </div>
         <div class="medium-9 columns breakdown-details">
-            <div id="show-map"></div>
             {{outlet}}
         </div>
     </script>
 
-    <script type="text/x-handlebars" id="breakdowns/specific">
+    <script type="text/x-handlebars" id="breakdowns/report">
+        <div class="medium-12 columns">
+            <div class="breakdown-form">
+                <div class="breakdown-content">
+                    <h1>Report a Breakdown</h1>
+                    <p>The breakdown that you report will be sent to the AEE Twitter account 
+                        (
+                            <a href="https://twitter.com/AEEONLINE" target="blank">
+                                @AEEONLINE
+                            </a>
+                        ).
+                    </p>
+                    <form>
+                        <label for="town">Town</label>
+                        {{input type="text" id="town" valueBinding="town"}}
+                        <label for="area">Area</label>
+                        {{input type="text" id="area" valueBinding="area"}}
+                        <button class="button expand submit-button" {{action 'submit'}}>
+                            Submit Report
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/x-handlebars" id="breakdowns/view">
+        <div id="show-map"></div>
+        {{outlet}}
+    </script>
+
+    <script type="text/x-handlebars" id="breakdowns/view/specific">
         {{outlet}}
         <div id="information" class="medium-12 columns breakdows-information">
             {{#each data in controller}}

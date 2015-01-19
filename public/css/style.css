@@ -136,3 +136,26 @@ ul{
     margin: 20% auto 25% auto;
     z-index: 100;
 }
+.no-display{
+    display: none;
+}
+.breakdown-form{
+    padding: 10%;
+}
+.breakdown-content{
+    background-color: white;
+    padding: 5%;
+}
+.breakdown-content h1{
+    color: #4d4d4d;
+}
+.breakdown-content p{
+    color: #4d4d4d;
+}
+.breakdown-content a{
+    color: #00BCD4;
+}
+.submit-button{
+    color: white;
+    background-color: #00BCD4;
+}
