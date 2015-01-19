@@ -6,10 +6,10 @@ require 'sinatra'
 set :server, 'webrick'
 
 client = Twitter::REST::Client.new do |config|
-  config.consumer_key        = "09wWFRX6DUyUryLvy12aVtk6V"
-  config.consumer_secret     = "mzz3saU3jsDtoDHSXrT1bfPvxYJUXE1ohnIxexP06kwQHVdChZ"
-  config.access_token        = "2985098704-n9clVJIrEzmDkbAOkmOHc1ikqP4ZxJEWmfzxg5p"
-  config.access_token_secret = "LLG5a4TsihY9kTY5gK3s5XWQMzH9bdnnDVlwzgjLgWQpz"
+  config.consumer_key        = "secret"
+  config.consumer_secret     = "secret"
+  config.access_token        = "secret"
+  config.access_token_secret = "secret"
 end
 
 set :public_folder, File.dirname(__FILE__) + '/public'
