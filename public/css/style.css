@@ -139,6 +139,13 @@ ul{
     margin: 20% auto 25% auto;
     z-index: 100;
 }
+.general-loading-size{
+    margin: 20% auto 25% auto;
+    z-index: 100;
+}
+.specific-loading-size{
+    margin-top: -1%;
+}
 .no-display{
     display: none;
 }
