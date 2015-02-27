@@ -73,15 +73,15 @@
                 <img id="imagen" src="img/aee.png" alt=""> 
                 </br>
             {{/link-to}}
-            <div class="medium-12 columns" style="overflow: hidden; height: 80%;">
-                <ul class="side-nav side-color" style="overflow-y: scroll; height: 100%;">
+            <div class="medium-12 columns breakdowns-list-container">
+                <ul class="side-nav side-color breakdowns-list">
                     {{#link-to 'breakdowns.report' class="button expand home-button"}}
                         Report Breakdown
                     {{/link-to}}
 
                     {{#each data in controller}}
-                    <li class="breakdown-list">
-                        <a {{action 'highlightMap' data.Pueblo}} class="breakdown-list">
+                    <li class="breakdowns-list-item">
+                        <a {{action 'highlightMap' data.Pueblo}} class="breakdowns-list-item-link">
                             {{data.Pueblo}}
                             <span class="white label right">
                                 {{[data.Cantidad de averias]}}
@@ -134,7 +134,7 @@
 
     <script type="text/x-handlebars" id="breakdowns/view/specific">
         {{outlet}}
-        <div id="information" class="medium-12 columns breakdows-information">
+        <div id="information" class="medium-12 columns breakdowns-information">
             {{#each data in controller}}
             <h1 style="color: #fff;">{{data.Pueblo}}</h1>
             <hr/>

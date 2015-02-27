@@ -29,14 +29,22 @@ ul{
     background-color:rgba(255, 255, 255, 0.86); 
     color: #00BCD4;
 }
-.breakdows-information {
+.breakdowns-list-container {
+    overflow: hidden; 
+    height: 80%;
+}
+.breakdowns-list {
+    overflow-y: scroll; 
+    height: 100%;
+}
+.breakdowns-information {
     white-space: none;
     overflow-y:scroll;
     min-height: 155px;
     margin-top: -4%;
     background-color: #808080;
 }
-.breakdows-information hr{
+.breakdowns-information hr{
     margin-top: 0;
     margin-bottom: 1%;
 }
