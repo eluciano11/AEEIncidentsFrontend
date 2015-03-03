@@ -68,16 +68,17 @@
 
     <!-- Breakdowns -->
     <script type="text/x-handlebars" id="breakdowns">
-        <div id="dynamic-resize" class="medium-3 columns side-color">
+        <div id="dynamic-resize" class="medium-3 small-12 columns side-color">
             {{#link-to 'breakdowns.view'}}
-                <div class="hide-for-small">
+                <div class="hide-for-small medium-12 small-12 columns">
                     <img id="imagen" src="img/aee.png" alt=""> 
                     </br>            
                 </div>
             {{/link-to}}
-            <div class="medium-12 columns breakdowns-list-container">
+            <div class="medium-12 small-12 columns breakdowns-list-container">
+
                 <ul class="side-nav side-color breakdowns-list">
-                    {{#link-to 'breakdowns.report' class="button expand home-button"}}
+                    {{#link-to 'breakdowns.report' class="button expand home-button"  style="margin-right: 5px"}}
                         Report Breakdown
                     {{/link-to}}
 
@@ -161,14 +162,14 @@
     <script src="js/app.js"></script>
     <script src="js/libs/map.js"></script>
     <!-- This is for when the page is resizing-->
-<!--     <script src="js/libs/dynamic-list.js"></script>
+    <script src="js/libs/dynamic-list.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             ele = document.getElementById('home');
             var heighty = $(window).height();;
             ele.style.height = heighty + 'px';
         });
-    </script> -->
+    </script>
 </body>
 
 </html>
