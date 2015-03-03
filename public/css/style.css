@@ -92,6 +92,9 @@ ul{
     text-align: center;
     margin: 0 auto;
 }
+#pueblo-list{
+    padding-right: 8px;
+}
 .map-active{
     fill: #FFEB3B;
 }
