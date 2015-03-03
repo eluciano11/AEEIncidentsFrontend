@@ -70,8 +70,10 @@
     <script type="text/x-handlebars" id="breakdowns">
         <div id="dynamic-resize" class="medium-3 columns side-color">
             {{#link-to 'breakdowns.view'}}
-                <img id="imagen" src="img/aee.png" alt=""> 
-                </br>
+                <div class="hide-for-small">
+                    <img id="imagen" src="img/aee.png" alt=""> 
+                    </br>            
+                </div>
             {{/link-to}}
             <div class="medium-12 columns breakdowns-list-container">
                 <ul class="side-nav side-color breakdowns-list">
@@ -124,7 +126,7 @@
     </script>
 
     <script type="text/x-handlebars" id="breakdowns/view">
-        <div id="show-map"></div>
+        <div id="show-map" class="hide-for-small"></div>
         {{outlet}}
     </script>
 
