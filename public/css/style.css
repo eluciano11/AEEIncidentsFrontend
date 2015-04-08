@@ -176,7 +176,7 @@ ul{
 }
 .submit-button:hover, .submit-button:active{
     background-color: rgba(0, 188, 212, 0.88);
-};
+}
 
 .breakdown-detail-space{
     margin-top:1%;
@@ -184,14 +184,15 @@ ul{
     margin-right:auto;
     margin-left: auto;
     width: 32.3333%;
-    color:white;
+    color: white;
 }
-
-@media (max-width: 786px){
+    
+@media (max-width: 767px){
     .breakdown-detail-space{
         margin-left: auto;
         margin-right: auto;
         padding-top: 5%;
         color: white;
+        width: 100%;
     }
 }
