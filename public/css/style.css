@@ -45,7 +45,8 @@ ul{
     white-space: none;
     overflow-y:scroll;
     min-height: 155px;
-    margin-top: -4%;
+    max-height: 240px;
+    margin-top: -10%;
     background-color: #808080;
 }
 .breakdowns-information hr{
