@@ -2,9 +2,13 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
 body {
-    background-color: #757575;
+    background-color: #00BCD4;
     font-family: 'Roboto',  sans-serif;
     font-weight: 400;
+}
+
+html, body {
+    height: 100%;
 }
 
 ul{
@@ -26,22 +30,23 @@ ul{
     color: #00BCD4;
 }
 .home-button:hover, .home-button:active{
-    background-color:rgba(255, 255, 255, 0.86); 
+    background-color:rgba(255, 255, 255, 0.86);
     color: #00BCD4;
 }
 .breakdowns-list-container {
-    overflow: hidden; 
+    overflow: hidden;
     height: 80%;
 }
 .breakdowns-list {
-    overflow-y: scroll; 
+    overflow-y: scroll;
     height: 100%;
 }
 .breakdowns-information {
     white-space: none;
     overflow-y:scroll;
     min-height: 155px;
-    margin-top: -4%;
+    max-height: 240px;
+    margin-top: -10%;
     background-color: #808080;
 }
 .breakdowns-information hr{
@@ -91,6 +96,9 @@ ul{
     text-align: center;
     margin: 0 auto;
 }
+#pueblo-list{
+    padding-right: 8px;
+}
 .map-active{
     fill: #FFEB3B;
 }
@@ -113,16 +121,10 @@ ul{
     margin-bottom:1%;
     color: #fff;
 }
-.breakdown-detail-space{
-    margin-top:1%;
-    margin-bottom:1%;
-    margin-right:1%;
-    width: 32.3333%;
-    color:white;
-}
 .home {
     width: 100%;
     background-color: #00BCD4;
+    height: 100%;
 }
 .home h1, h2, h3, h4, a, p{
     color:white;
@@ -179,4 +181,27 @@ ul{
 }
 .submit-button:hover, .submit-button:active{
     background-color: rgba(0, 188, 212, 0.88);
-};
+}
+
+.breakdown-detail-space{
+    margin-top:1%;
+    margin-bottom:1%;
+    margin-right:auto;
+    margin-left: auto;
+    width: 32.3333%;
+    color: white;
+}
+    
+@media (max-width: 767px){
+    .breakdown-detail-space{
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 5%;
+        color: white;
+        width: 100%;
+    }
+}
+
+.home-logo {
+    height: 35%;
+}

@@ -24,37 +24,37 @@
 
     <!-- Index -->
     <script type="text/x-handlebars" id="index">
-        <div id="home" class="home">
-            <div class="medium-12 columns">
-                <div class="medium-offset-4 medium-4 columns">
-                    <img src="img/aee-down.png" alt="">
+        <div id="home" class="home" >
+            <div class="medium-12 small-12 columns">
+                <div class="large-offset-4 small-12 medium-10 medium-offset-1 medium-offset-1 large-4 columns home-logo">
+                    <img src="img/aee-down.png" class="img-responsive">
                 </div>
             </div>
-            <div class="medium-12 columns">
+            <div class="medium-12 small-12 columns">
                 <div class="medium-12 columns">
-                    <div class="medium-offset-4 medium-4 columns text-center">
+                    <div class="large-offset-4 small-12 medium-offset-1 medium-10 large-4 columns text-center" style="height: 45%;">
                         <p>
                             This "version" of AEE Incidents started with the idea of letting the people of Puerto Rico know about the averias in Puerto Rico and doing it in a pretty/user friendly way. Hope you enjoy!
                         </p>
                     </div>
                 </div>
                 <div class="medium-12 columns">
-                    <div class="medium-offset-4 medium-4 columns">
+                    <div class="large-offset-4 large-4 small-12 medium-offset-2 medium-8 columns">
                         {{#link-to 'breakdowns.view'}}
                             <button class="button expand home-button">See Incidents</button>
                         {{/link-to}}
                     </div>
                 </div>
             </div>
-            <div class="medium-12 columns">
+            <div class="medium-12 small-12 hide-for-small columns">
                 <footer>
                     <div class="text-right footer-information">
                         <p>
                             <a href="https://github.com/ens-labs">
-                                <img class="img-circle img-small" src="http://www.gravatar.com/avatar/53cee157c466bd37b8c75173611cadba.jpg?s=145"> 
+                                <img class="img-circle img-small" src="http://www.gravatar.com/avatar/53cee157c466bd37b8c75173611cadba.jpg?s=145">
                             </a>
                             <a href="https://github.com/eluciano11">
-                                <img class="img-circle img-small" src="https://www.gravatar.com/avatar/472f9c9bd76dc1a47ad8b38a0b3b49c0?d=identicon&s=145"> 
+                                <img class="img-circle img-small" src="https://www.gravatar.com/avatar/472f9c9bd76dc1a47ad8b38a0b3b49c0?d=identicon&s=145">
                             </a>
                             <a href="https://github.com/Code4PuertoRico">
                                 <img class="img-small" src="img/code4pr.svg">
@@ -68,14 +68,21 @@
 
     <!-- Breakdowns -->
     <script type="text/x-handlebars" id="breakdowns">
-        <div id="dynamic-resize" class="medium-3 columns side-color">
+        <div id="dynamic-resize" class="medium-3 small-12 columns side-color">
             {{#link-to 'breakdowns.view'}}
-                <img id="imagen" src="img/aee.png" alt=""> 
-                </br>
+                <div class="hide-for-small medium-12 small-12 columns">
+                    <img id="imagen" src="img/aee.png" alt="">
+                    </br>
+                </div>
             {{/link-to}}
-            <div class="medium-12 columns breakdowns-list-container">
-                <ul class="side-nav side-color breakdowns-list">
-                    {{#link-to 'breakdowns.report' class="button expand home-button"}}
+            {{#link-to 'breakdowns.report' class="button expand home-button hidden show-for-small"}}
+                Report Breakdown
+            {{/link-to}}
+            
+            <div class="medium-12 small-12 columns breakdowns-list-container">
+
+                <ul  id="pueblo-list" class="side-nav side-color breakdowns-list">
+                    {{#link-to 'breakdowns.report' class="button expand home-button hide-for-small"  style="margin-right: 5px"}}
                         Report Breakdown
                     {{/link-to}}
 
@@ -106,7 +113,7 @@
             <div class="breakdown-form">
                 <div class="breakdown-content">
                     <h1>Report a Breakdown</h1>
-                    <p>The breakdown that you report will be sent to the AEE Twitter account 
+                    <p>The breakdown that you report will be sent to the AEE Twitter account
                         (
                             <a href="https://twitter.com/AEEONLINE" target="blank">
                                 @AEEONLINE
@@ -124,7 +131,7 @@
     </script>
 
     <script type="text/x-handlebars" id="breakdowns/view">
-        <div id="show-map"></div>
+        <div id="show-map" class="hide-for-small"></div>
         {{outlet}}
     </script>
 
@@ -147,7 +154,7 @@
                         <br/>
                         Last Update: {{[information.Last Update]}}
                     </li>
-                {{/each}} 
+                {{/each}}
             </ul>
             {{/each}}
         </div>
@@ -159,14 +166,14 @@
     <script src="js/app.js"></script>
     <script src="js/libs/map.js"></script>
     <!-- This is for when the page is resizing-->
-    <script src="js/libs/dynamic-list.js"></script>
+<!--    <script src="js/libs/dynamic-list.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             ele = document.getElementById('home');
             var heighty = $(window).height();;
             ele.style.height = heighty + 'px';
         });
-    </script>
+    </script> -->
 </body>
 
 </html>
